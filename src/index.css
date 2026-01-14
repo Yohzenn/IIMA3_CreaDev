@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Primetime;
+  src: url('./assets/fonts/PRIMETIME.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Valorant;
+  src: url('./assets/fonts/Valorant.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
