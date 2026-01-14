@@ -50,9 +50,9 @@ function MemberCard({ member }: MemberCardProps) {
   }
 
   return (
-    <div className="relative">
+    <div className="relative group hover:scale-110 transition-transform duration-300">
       <div className="absolute top-10 left-10 origin-top-left rotate-90 z-10">
-        <p className="font-primetime text-xs text-pink-light">{country}</p>
+        <p className="font-primetime text-xs text-pink-light group-hover:text-burgundy">{country}</p>
         <p
           className="text-4xl font-primetime uppercase"
           style={{
@@ -64,13 +64,11 @@ function MemberCard({ member }: MemberCardProps) {
           {name}
         </p>
       </div>
-      <div className="relative bg-dark-gray w-57 h-128 overflow-hidden rounded-tl-2xl rounded-br-2xl">
+      <div className="relative w-57 h-128 overflow-hidden rounded-tl-2xl rounded-br-2xl bg-dark-gray group-hover:bg-pink-medium transition-colors duration-300">
         <img src={img} alt={member} className={`absolute ${style}`} />
       </div>
-      <div
-        className="w-56 h-14 absolute -bottom-6 left-6 bg-dark-gray border-inset-white z-10"
-      >
-        <img src={abilities} alt="abilities" className="" />
+      <div className="bg-dark-gray group-hover:bg-pink-dark transition-colors duration-300 w-56 h-14 absolute -bottom-6 left-6 border-inset-white z-10 flex items-center justify-center">
+        <img src={abilities} alt="abilities" className="text-pink-100" />
       </div>
     </div>
   );
