@@ -1,4 +1,4 @@
-import MemberCard from "./memberCard";
+import MemberCard from "./MemberCard";
 
 export default function MembersSection() {
   const blackpinkMembers = ["jennie", "lisa", "rose", "jisoo"];

@@ -4,7 +4,7 @@ import jump_disk from "../assets/img/jump_disk.png"
 
 function Latest(){
     return (
-            <div className="bg-gradient-to-b from-[#6A3F4A] to-[#170C10] py-20 w-screen">
+            <div className="py-20 w-screen">
                 <h1 className="text-center font-[primetime] m-20 text-6xl text-white"> Latest Release </h1>
                 <div className="w-[80%] m-auto flex justify-between gap-20">
 
