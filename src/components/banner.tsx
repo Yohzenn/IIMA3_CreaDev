@@ -5,7 +5,7 @@ import fog from "../assets/img/fog.png";
 
 export default function Banner() {
   return (
-    <div className="relative w-screen h-screen bg-linear-to-b from-burgundy to-dark-gray">
+    <div id="home" className="relative w-screen h-screen bg-linear-to-b from-burgundy to-dark-gray">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-50"
         style={{ backgroundImage: `url(${bannerBg})` }}
