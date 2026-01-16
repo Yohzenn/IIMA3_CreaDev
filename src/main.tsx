@@ -11,7 +11,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Banner />
     <Menu />
-    {/* <Latest></Latest> */}
+    <Latest></Latest>
     <MembersSection />
     <Album/>
   </StrictMode>
