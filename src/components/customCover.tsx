@@ -1,9 +1,9 @@
 import Album from "./albumSection";
 import { useState } from "react";
-import Logo_White from '../assets/img/Logo_White.png';
-import Logo_Terciary from '../assets/img/Logo_Terciary.png';
-import Logo_TerciaryDark from '../assets/img/Logo_TerciaryDark.png';
-import Logo_Pink from '../assets/img/Logo_Pink.png';
+import Logo_White from "../assets/img/Logo_White.png";
+import Logo_Terciary from "../assets/img/Logo_Terciary.png";
+import Logo_TerciaryDark from "../assets/img/Logo_TerciaryDark.png";
+import Logo_Pink from "../assets/img/Logo_Pink.png";
 
 const bgColors = ["#000000", "#170c10", "#f79aaf", "#6a3f4a"];
 const curveColors = ["#f79aaf", "#ffd700", "#ffffff", "#8e4256"];
@@ -45,7 +45,10 @@ function CustomCover() {
   };
 
   const getLogoImage = () => {
-    return logoColors.find((item) => item.color === appliedLogoColor)?.image || Logo_Pink;
+    return (
+      logoColors.find((item) => item.color === appliedLogoColor)?.image ||
+      Logo_Pink
+    );
   };
 
   return (
@@ -77,20 +80,22 @@ function CustomCover() {
       <div className="flex justify-center items-center flex-col md:flex-row gap-20">
         <div className="relative">
           <Album
-          reps={appliedReps}
-          repsP={appliedRepsP}
-          bgColor={appliedBgColor}
-          curveColor={appliedCurveColor}
-          petalColor={appliedPetalColor}
-          className="w-[360px] h-[360px]"
-        />
-        <img src={getLogoImage()} className="absolute origin-bottom top-1/2 right-4 w-1/2 -translate-y-1/2" />
+            reps={appliedReps}
+            repsP={appliedRepsP}
+            bgColor={appliedBgColor}
+            curveColor={appliedCurveColor}
+            petalColor={appliedPetalColor}
+            className=""
+          />
+          <img
+            src={getLogoImage()}
+            className="absolute origin-bottom top-1/2 right-4 w-1/2 -translate-y-1/2"
+          />
         </div>
-        
 
-        <div className="w-[360px] font-primetime text-center">
-          <div>
-            <h3 className="mb-5">Logo color:</h3>
+        <div className="w-1/2 text-center">
+          <div className="flex flex-col">
+            <h3 className="mb-5">Logo color :</h3>
             <div className="flex gap-8 justify-center mb-5">
               {logoColors.map((item) => (
                 <button
@@ -106,8 +111,10 @@ function CustomCover() {
                 />
               ))}
             </div>
+          </div>
 
-            <h3 className="mb-5">Curve Color:</h3>
+          <div className="flex flex-col">
+            <h3 className="mb-5">Curve Color :</h3>
             <div className="flex gap-8 justify-center mb-5">
               {curveColors.map((color) => (
                 <button
@@ -122,8 +129,10 @@ function CustomCover() {
                 />
               ))}
             </div>
+          </div>
 
-            <h3 className="mb-5">Petal Color:</h3>
+          <div className="flex flex-col">
+            <h3 className="mb-5">Petal Color :</h3>
             <div className="flex gap-8 justify-center mb-5">
               {petalColors.map((color) => (
                 <button
@@ -138,8 +147,10 @@ function CustomCover() {
                 />
               ))}
             </div>
+          </div>
 
-            <h3 className="mb-5">Background:</h3>
+          <div className="flex flex-col">
+            <h3 className="mb-5">Background :</h3>
             <div className="flex gap-8 justify-center mb-5">
               {bgColors.map((color) => (
                 <button
@@ -155,42 +166,43 @@ function CustomCover() {
               ))}
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="flex justify-center gap-10 mt-10 flex-col md:flex-row">
-        <div className="flex flex-col gap-2 w-60">
-          <label className="font-poppins">No. of curves : {reps}</label>
-          <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
-            <div
-              className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
-              style={{ width: `${(reps / 10) * 100}%` }}
-            />
-            <input
-              type="range"
-              min={0}
-              max={10}
-              value={reps}
-              onChange={(e) => setReps(Number(e.target.value))}
-              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col gap-2 w-60">
-          <label className="font-poppins">No. of Petals : {repsP}</label>
-          <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
-            <div
-              className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
-              style={{ width: `${(repsP / 50) * 100}%` }}
-            />
-            <input
-              type="range"
-              min={0}
-              max={50}
-              value={repsP}
-              onChange={(e) => setRepsP(Number(e.target.value))}
-              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-            />
+          <div className="flex flex-col items-center justify-center gap-8">
+            <div className="flex flex-col gap-2 w-60">
+              <label>No. of curves : {reps}</label>
+              <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
+                <div
+                  className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
+                  style={{ width: `${(reps / 10) * 100}%` }}
+                />
+                <input
+                  type="range"
+                  min={0}
+                  max={10}
+                  value={reps}
+                  onChange={(e) => setReps(Number(e.target.value))}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2 w-60">
+              <label className="font-poppins">No. of Petals : {repsP}</label>
+              <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
+                <div
+                  className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
+                  style={{ width: `${(repsP / 10) * 100}%` }}
+                />
+                <input
+                  type="range"
+                  min={0}
+                  max={10}
+                  value={repsP}
+                  onChange={(e) => setRepsP(Number(e.target.value))}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
