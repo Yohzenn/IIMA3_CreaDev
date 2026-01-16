@@ -41,7 +41,7 @@ export default function Banner() {
 
       <div className="relative z-10 overflow-hidden lg:overflow-visible h-full max-w-full lg:max-w-2/3 m-auto flex items-center justify-center">
         <div
-          className="absolute origin-bottom -bottom-50 md:bottom-0 z-30 w-180 min-w-180 max-w-180"
+          className="absolute origin-bottom -bottom-50 md:-bottom-30 z-30 w-170 min-w-170 max-w-170"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -52,7 +52,7 @@ export default function Banner() {
           />
         </div>
 
-        <div className="absolute top-40 md:top-50 flex flex-col gap-4 pointer-events-none">
+        <div className="absolute top-40 md:top-'40 flex flex-col gap-4 pointer-events-none">
           <div className="w-full flex justify-between font-family-valorant text-xl">
             <h3>Jennie</h3>
             <h3>Jisoo</h3>
