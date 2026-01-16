@@ -93,3 +93,7 @@
 .menu-nav.active a:nth-child(4) {
   transition-delay: 400ms;
 }
+
+.menu-nav.active a:nth-child(5) {
+  transition-delay: 500ms;
+}

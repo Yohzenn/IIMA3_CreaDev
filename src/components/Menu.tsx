@@ -6,7 +6,7 @@ const menuItems = [
   { href: "#about", label: "About" },
   { href: "#latest", label: "Latest Release" },
   { href: "#members", label: "Members" },
-  { href: "#contact", label: "Contact" },
+  { href: "#cover", label: "Customize Cover" },
 ];
 
 export default function Menu() {
@@ -81,13 +81,12 @@ export default function Menu() {
         </svg>
       </div>
 
-      {/* Full Screen Menu */}
       <div
         className={`fixed inset-0 bg-dark-gray z-40 flex items-center justify-center transition-all duration-500 ease-in-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <nav className={`menu-nav flex flex-col items-center gap-8 ${isOpen ? "active" : ""}`}>
+        <nav className={`menu-nav flex flex-col items-center text-center gap-8 ${isOpen ? "active" : ""}`}>
           {menuItems.map((item) => (
             <a
               key={item.href}

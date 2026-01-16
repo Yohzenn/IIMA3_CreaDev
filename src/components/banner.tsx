@@ -41,14 +41,14 @@ export default function Banner() {
 
       <div className="relative z-10 overflow-hidden lg:overflow-visible h-full max-w-full lg:max-w-2/3 m-auto flex items-center justify-center">
         <div
-          className="absolute origin-bottom -bottom-50 md:bottom-0 z-30 w-[743px] min-w-[743px] max-w-[743px]"
+          className="absolute origin-bottom -bottom-50 md:bottom-0 z-30 w-180 min-w-180 max-w-180"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           <img
             src={jennie}
             alt="Jennie from BlackPink"
-            className="w-full h-full pointer-events-none"
+            className="w-full h-auto"
           />
         </div>
 

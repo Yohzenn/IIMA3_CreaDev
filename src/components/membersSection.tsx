@@ -3,7 +3,7 @@ import MemberCard from "./MemberCard";
 export default function MembersSection() {
   const blackpinkMembers = ["jennie", "lisa", "rose", "jisoo"];
   return (
-    <div className="my-20">
+    <div id="members" className="lg:my-20">
       <h2 className="uppercase text-5xl! gradient-heading my-20 tracking-widest">
         {"MEMBERS".split("").map((char, index) => (
           <span key={index} className="char">

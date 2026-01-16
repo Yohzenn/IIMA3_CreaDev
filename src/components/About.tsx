@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="my-20 w-11/12 md:w-2/3 mx-auto flex flex-col justify-center items-center"
+      className="lg:my-20 w-11/12 md:w-2/3 mx-auto flex flex-col justify-center items-center"
     >
       <h2 className="uppercase text-5xl! gradient-heading my-20 tracking-widest">
         {"ABOUT".split("").map((char, index) => (
@@ -43,8 +43,8 @@ export default function About() {
                 <span className="inline-block scale-x-[-1]">N</span>K
               </span>
             </em>{" "}
-            weapon skins <span className="font-sans">—</span> four iconic
-            designs inspired by each member. And with their brand new single{" "}
+            weapon skins, four iconic designs inspired by each member. And with
+            their brand new single{" "}
             <em className="skewed-bg font-family-primetime">
               <span>VICTORY</span>
             </em>{" "}
