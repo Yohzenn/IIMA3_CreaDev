@@ -1,73 +1,16 @@
-# React + TypeScript + Vite
+# Blacpink x Valorant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BLACKPINK s’infiltre dans l’univers de VALORANT pour le VCT 2026, brisant la frontière entre musique et gaming.
 
-Currently, two official plugins are available:
+Débloquez les skins d’armes BLACKPINK en édition limitée, quatre designs iconiques inspirés de chaque membre. Et avec leur tout nouveau single VICTORY, l’engouement atteint de nouveaux sommets.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Découvrez ci-dessous sa pochette générative, un visuel unique qui n’est jamais deux fois le même.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![moodboard](./src/assets/img/moodboard.png)
 
-## Expanding the ESLint configuration
+# Notre intention graphique
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Notre but est de créer une fusion entre les univers de la k-pop avec Blackpink   et celui du jeu vidéo avec Valorant. Nous avons donc voulu transformer nos stars préférées en agent Valorant et les présenter dans des cartes disposées à la manière d'un écran de chargement du jeu! Nous avons mélé les couleurs du single Jump de blackpink avec les formes plus "cubiques" de Valorant!
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
