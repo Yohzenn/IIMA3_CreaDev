@@ -1,9 +1,19 @@
 import Album from "./albumSection";
 import { useState } from "react";
+import Logo_White from "../assets/img/Logo_White.png";
+import Logo_Terciary from "../assets/img/Logo_Terciary.png";
+import Logo_TerciaryDark from "../assets/img/Logo_TerciaryDark.png";
+import Logo_Pink from "../assets/img/Logo_Pink.png";
 
 const bgColors = ["#000000", "#170c10", "#f79aaf", "#6a3f4a"];
-const curveColors = ["#ee82ee", "#f79aaf", "#ffffff", "#ffd700"];
-const petalColors = ["#ee82ee", "#f79aaf", "#ffffff", "#ff69b4"];
+const curveColors = ["#f79aaf", "#ffd700", "#ffffff", "#8e4256"];
+const petalColors = ["#f79aaf", "#ffd700", "#ffffff", "#8e4256"];
+const logoColors = [
+  { color: "#f79aaf", label: "Pink", image: Logo_Pink },
+  { color: "#8e4258", label: "Terciary", image: Logo_Terciary },
+  { color: "#6a3f4a", label: "TerciaryDark", image: Logo_TerciaryDark },
+  { color: "#ffffff", label: "White", image: Logo_White },
+];
 
 function CustomCover() {
   const [reps, setReps] = useState<number>(3);
@@ -11,6 +21,7 @@ function CustomCover() {
   const [bgColor, setBgColor] = useState<string>(bgColors[0]);
   const [curveColor, setCurveColor] = useState<string>(curveColors[0]);
   const [petalColor, setPetalColor] = useState<string>(petalColors[0]);
+  const [logoColor, setLogoColor] = useState<string>(logoColors[0].color);
   const [appliedReps, setAppliedReps] = useState<number>(3);
   const [appliedRepsP, setAppliedRepsP] = useState<number>(4);
   const [appliedBgColor, setAppliedBgColor] = useState<string>(bgColors[0]);
@@ -20,6 +31,9 @@ function CustomCover() {
   const [appliedPetalColor, setAppliedPetalColor] = useState<string>(
     petalColors[0]
   );
+  const [appliedLogoColor, setAppliedLogoColor] = useState<string>(
+    logoColors[0].color
+  );
 
   const handleGenerate = () => {
     setAppliedReps(reps);
@@ -27,6 +41,14 @@ function CustomCover() {
     setAppliedBgColor(bgColor);
     setAppliedCurveColor(curveColor);
     setAppliedPetalColor(petalColor);
+    setAppliedLogoColor(logoColor);
+  };
+
+  const getLogoImage = () => {
+    return (
+      logoColors.find((item) => item.color === appliedLogoColor)?.image ||
+      Logo_Pink
+    );
   };
 
   return (
@@ -55,24 +77,39 @@ function CustomCover() {
         </span>
       </h2>
 
-      <div className="flex justify-center items-center flex-col lg:flex-row gap-20">
-        <Album
-          reps={appliedReps}
-          repsP={appliedRepsP}
-          bgColor={appliedBgColor}
-          curveColor={appliedCurveColor}
-          petalColor={appliedPetalColor}
-          className="md:size-1/2"
-        />
+      <div className="flex justify-center items-center flex-col md:flex-row gap-20">
+        <div className="relative">
+          <Album
+            reps={appliedReps}
+            repsP={appliedRepsP}
+            bgColor={appliedBgColor}
+            curveColor={appliedCurveColor}
+            petalColor={appliedPetalColor}
+            className="md:size-1/2"
+          />
+          <img
+            src={getLogoImage()}
+            className="absolute origin-bottom top-1/2 right-4 w-1/2 -translate-y-1/2"
+          />
+        </div>
 
         <div className="w-1/2 text-center">
           <div className="flex flex-col">
             <h3 className="mb-5">Logo color :</h3>
             <div className="flex gap-8 justify-center mb-5">
-              <div className="bg-white w-14 h-14 "></div>
-              <div className="bg-white w-14 h-14 "></div>
-              <div className="bg-white w-14 h-14 "></div>
-              <div className="bg-white w-14 h-14 "></div>
+              {logoColors.map((item) => (
+                <button
+                  key={item.color}
+                  onClick={() => setLogoColor(item.color)}
+                  className={`w-14 h-14 rounded-md cursor-pointer border-2 transition-all ${
+                    logoColor === item.color
+                      ? "border-pink-light scale-110"
+                      : "border-transparent"
+                  }`}
+                  style={{ backgroundColor: item.color }}
+                  title={item.label}
+                />
+              ))}
             </div>
           </div>
 
