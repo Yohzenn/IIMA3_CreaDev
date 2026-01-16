@@ -2,8 +2,8 @@ import Album from "./albumSection";
 import { useState } from "react";
 
 const bgColors = ["#000000", "#170c10", "#f79aaf", "#6a3f4a"];
-const curveColors = ["#ee82ee", "#f79aaf", "#ffffff", "#ffd700"];
-const petalColors = ["#ee82ee", "#f79aaf", "#ffffff", "#ff69b4"];
+const curveColors = ["#f79aaf", "#ffd700", "#ffffff", "#8e4256"];
+const petalColors = ["#f79aaf", "#ffd700", "#ffffff", "#8e4256"];
 
 function CustomCover() {
   const [reps, setReps] = useState<number>(3);
