@@ -14,6 +14,19 @@ Nous avons ainsi imaginé les membres du groupe sous la forme d'agents VALORANT,
 
 L'identité visuelle mêle les couleurs du single VICTORY aux formes géométriques et cubiques propres à l'esthétique de VALORANT, afin de créer un univers cohérent et immersif.
 
+### La cover personnalisable
+
+Nous avons développé un générateur de cover interactif utilisant l'API Canvas, fusionnant l'esthétique des albums de BLACKPINK avec l'univers visuel de VALORANT.
+
+Les utilisateurs peuvent personnaliser leur propre cover en choisissant :
+
+- **La couleur du logo** BLACKPINK parmi 4 variations
+- **La couleur des courbes** animées inspirées des designs d'albums k-pop
+- **La couleur des pétales** qui ornent la composition
+- **Le background** : une sélection de maps emblématiques de VALORANT (Haven, Icebox, Ascent, Pearl) appliquées en arrière-plan avec une opacité subtile
+
+Cette approche permet à chaque fan de créer sa propre version de la cover, reflétant à la fois son style personnel et l'esprit de la collaboration.
+
 ## Découvrez notre moodboard!
 
 ![moodboard](./src/assets/img/moodboard.png)

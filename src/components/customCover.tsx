@@ -160,7 +160,7 @@ function CustomCover() {
                 <button
                   key={image}
                   onClick={() => setBgImage(image)}
-                  className={`w-14 h-14 rounded-md cursor-pointer border-2 transition-all overflow-hidden ${
+                  className={`w-14 h-14 rounded-md cursor-pointer border-2 transition-all p-0! overflow-hidden ${
                     bgImage === image
                       ? "border-pink-light scale-110"
                       : "border-transparent"

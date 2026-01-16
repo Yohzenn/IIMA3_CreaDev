@@ -5,7 +5,7 @@ const menuItems = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#latest", label: "Latest Release" },
-  { href: "#members", label: "Members" },
+  { href: "#members", label: "Agents" },
   { href: "#cover", label: "Customize Cover" },
 ];
 
@@ -86,7 +86,11 @@ export default function Menu() {
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <nav className={`menu-nav flex flex-col items-center text-center gap-8 ${isOpen ? "active" : ""}`}>
+        <nav
+          className={`menu-nav flex flex-col items-center text-center gap-8 ${
+            isOpen ? "active" : ""
+          }`}
+        >
           {menuItems.map((item) => (
             <a
               key={item.href}
