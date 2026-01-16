@@ -18,3 +18,26 @@ L’identité visuelle mêle les couleurs du single VICTORY aux formes géométr
 # Découvrez notre moodboard!
 ![moodboard](./src/assets/img/moodboard.png)
 
+# Lancer le projet en local
+Pour exécuter ce projet React sur ta machine, suis les étapes ci-dessous.
+
+# 1.Cloner le dépôt
+***
+git clone https://github.com/Yohzenn/IIMA3_CreaDev
+***
+Accède ensuite au dossier du projet :
+***  
+  cd IIMA3_CreaDev
+***
+
+# 2.Installer les dépendances
+Assure-toi d’avoir Node.js installé, puis lance :
+***
+npm install
+***
+
+# 3.Démarrer le serveur de développement
+***
+npm run dev
+***
+Le projet sera accessible par défaut à l’adresse indiquée dans le terminal (généralement http://localhost:5173).
