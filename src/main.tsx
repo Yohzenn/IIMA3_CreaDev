@@ -4,10 +4,14 @@ import "./index.css";
 import Latest from "./components/latest";
 import MembersSection from "./components/membersSection";
 import Album from "./components/albumSection";
+import Banner from "./components/banner";
+import Menu from "./components/Menu";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Latest></Latest>
+    <Banner />
+    <Menu />
+    {/* <Latest></Latest> */}
     <MembersSection />
     <Album/>
   </StrictMode>
