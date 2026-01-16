@@ -1,13 +1,13 @@
 import { initCanvas } from "../services/canvas";
 import draw, { petalCoords } from "../services/cover";
-import { useEffect,useRef } from "react";
+import { useEffect,useRef,useState } from "react";
 import { petal } from "../services/cover";
 
 function Album() {
     const size = 500;
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
-    let reps = 4;
-    let repsP = 5;
+    const [reps, setReps] = useState<number>(4);
+    const [repsP, setRepsP] = useState<number>(5);
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -65,9 +65,6 @@ function Album() {
                     ] = draw();*/
                 }
                 for(let i=0;i<repsP;i++){
-                    /*if(sizeP<petalcoords[i][3]){
-                        sizeP+= 10;
-                    }*/
                     sizeP = petalcoords[i][3];
                     xP = petalcoords[i][0];
                     yP = petalcoords[i][1];
@@ -89,10 +86,36 @@ function Album() {
     cancelAnimationFrame(rafID);
     ctx.clearRect(0, 0, size, size);
   };
-}, []);
+}, [reps,repsP]);
 
 
-        return <canvas ref={canvasRef} width={size} height={size} />;
+        return (
+            <>
+                <canvas ref={canvasRef} width={size} height={size} />
+                <div>
+                    <label>Nombre de courbes : {reps}</label>
+
+                    <input
+                        type="range"
+                        min={0}
+                        max={10}
+                        value={reps}
+                        onChange={(e) => setReps(Number(e.target.value))}
+                    />
+                </div>
+                <div>
+                    <label>Nombre de "pétales" : {repsP}</label>
+
+                    <input
+                        type="range"
+                        min={0}
+                        max={10}
+                        value={repsP}
+                        onChange={(e) => setRepsP(Number(e.target.value))}
+                    />
+                </div>
+            </>
+        );
 }
 
 export default Album
