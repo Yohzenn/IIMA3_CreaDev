@@ -60,7 +60,7 @@ function Album({
 
       // Dessiner l'image de background avec opacité 10% et comportement object-cover
       if (bgImageRef.current && bgImageRef.current.complete) {
-        ctx.globalAlpha = 0.3;
+        ctx.globalAlpha = 0.25;
 
         // Calculer les dimensions pour object-cover
         const imgRatio = bgImageRef.current.width / bgImageRef.current.height;
