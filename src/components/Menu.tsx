@@ -4,6 +4,7 @@ import "./Menu.css";
 const menuItems = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
+  { href: "#latest", label: "Latest Release" },
   { href: "#members", label: "Members" },
   { href: "#contact", label: "Contact" },
 ];
