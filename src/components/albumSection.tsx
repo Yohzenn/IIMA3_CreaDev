@@ -3,11 +3,11 @@ import draw, { petalCoords } from "../services/cover";
 import { useEffect,useRef,useState } from "react";
 import { petal } from "../services/cover";
 
-function Album() {
+function Album({reps, setReps, repsP, setRepsP}:{reps:number ,setReps:(e: React.ChangeEvent<HTMLInputElement>) => void,repsP:number ,setRepsP:(e: React.ChangeEvent<HTMLInputElement>) => void}) {
     const size = 500;
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
-    const [reps, setReps] = useState<number>(4);
-    const [repsP, setRepsP] = useState<number>(5);
+    //const [reps, setReps] = useState<number>(4);
+    //const [repsP, setRepsP] = useState<number>(5);
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -92,6 +92,10 @@ function Album() {
         return (
             <>
                 <canvas ref={canvasRef} width={size} height={size} />
+            </>
+        );
+}
+/*
                 <div>
                     <label>Nombre de courbes : {reps}</label>
 
@@ -114,8 +118,5 @@ function Album() {
                         onChange={(e) => setRepsP(Number(e.target.value))}
                     />
                 </div>
-            </>
-        );
-}
-
+*/
 export default Album
