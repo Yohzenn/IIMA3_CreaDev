@@ -7,10 +7,12 @@ import Album from "./components/albumSection";
 import Banner from "./components/Banner";
 import Menu from "./components/Menu";
 import About from "./components/About";
+import CustomCover from "./components/customCover";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Menu />
+    <CustomCover />
     <Banner />
     <About />
     <Latest />
