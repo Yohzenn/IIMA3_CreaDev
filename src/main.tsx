@@ -7,6 +7,7 @@ import Album from "./components/albumSection";
 import Banner from "./components/banner";
 import Menu from "./components/Menu";
 import About from "./components/About";
+//<Album />
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -15,6 +16,5 @@ createRoot(document.getElementById("root")!).render(
     <About />
     <Latest />
     <MembersSection />
-    <Album />
   </StrictMode>
 );
