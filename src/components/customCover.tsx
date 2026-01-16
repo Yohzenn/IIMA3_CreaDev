@@ -7,7 +7,7 @@ const petalColors = ["#ee82ee", "#f79aaf", "#ffffff", "#ff69b4"];
 
 function CustomCover() {
   const [reps, setReps] = useState<number>(3);
-  const [repsP, setRepsP] = useState<number>(4);
+  const [repsP, setRepsP] = useState<number>(20);
   const [bgColor, setBgColor] = useState<string>(bgColors[0]);
   const [curveColor, setCurveColor] = useState<string>(curveColors[0]);
   const [petalColor, setPetalColor] = useState<string>(petalColors[0]);
