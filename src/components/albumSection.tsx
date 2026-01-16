@@ -104,7 +104,7 @@ function Album() {
                     />
                 </div>
                 <div>
-                    <label>Nombre de "pétales" : {repsP}</label>
+                    <label>Nombre de pétales : {repsP}</label>
 
                     <input
                         type="range"
