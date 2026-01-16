@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @font-face {
   font-family: "Valorant";
@@ -70,7 +70,11 @@
   font-style: normal;
   padding: 0.1em 0.3em;
   border-radius: 0.2em;
-  background: linear-gradient(to right, var(--color-pink-light), var(--color-pink-dark));
+  background: linear-gradient(
+    to right,
+    var(--color-pink-light),
+    var(--color-pink-dark)
+  );
   transform: skewX(-10deg);
 }
 
@@ -115,7 +119,12 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: var(--color-dark-gray);
+  /* background-color: var(--color-dark-gray);  */
+  background: linear-gradient(
+    180deg,
+    rgba(31, 35, 38, 1) 80%,
+    rgba(106, 63, 74, 1) 100%
+  );
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

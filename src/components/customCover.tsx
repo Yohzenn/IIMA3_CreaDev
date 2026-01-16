@@ -31,7 +31,7 @@ function CustomCover() {
 
   return (
     <div id="cover" className="lg:my-20 w-11/12 md:w-2/3 mx-auto">
-      <h2 className="uppercase text-5xl! gradient-heading my-20 tracking-widest flex flex-col lg:flex-row items-center gap-2 lg:gap-4">
+      <h2 className="uppercase text-5xl! gradient-heading my-20 tracking-widest flex flex-col flex-wrap lg:flex-row items-center gap-2 lg:gap-4">
         <span>
           {"CUSTOMIZE".split("").map((char, index) => (
             <span key={index} className="char">
@@ -75,26 +75,20 @@ function CustomCover() {
               <div className="bg-white w-14 h-14 "></div>
             </div>
 
-                    <input
-                        type="range"
-                        min={0}
-                        max={10}
-                        value={reps}
-                        onChange={(e) => setReps(Number(e.target.value))}
-                    />
-                </div>
-                <div className="flex justify-around gap-2">
-                    <label className="font-[poppins]">Nombre de pétales : {repsP}</label>
-
-                    <input
-                        type="range"
-                        min={0}
-                        max={10}
-                        value={repsP}
-                        onChange={(e) => setRepsP(Number(e.target.value))}
-
-                    />
-                </div>
+            <h3 className="mb-5">Curve Color:</h3>
+            <div className="flex gap-8 justify-center mb-5">
+              {curveColors.map((color) => (
+                <button
+                  key={color}
+                  onClick={() => setCurveColor(color)}
+                  className={`w-14 h-14 rounded-md cursor-pointer border-2 transition-all ${
+                    curveColor === color
+                      ? "border-pink-light scale-110"
+                      : "border-transparent"
+                  }`}
+                  style={{ backgroundColor: color }}
+                />
+              ))}
             </div>
 
             <h3 className="mb-5">Petal Color:</h3>
@@ -130,6 +124,54 @@ function CustomCover() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="flex justify-center gap-10 mt-10 flex-col md:flex-row">
+        <div className="flex flex-col gap-2 w-60">
+          <label className="font-poppins">No. of curves : {reps}</label>
+          <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
+            <div
+              className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
+              style={{ width: `${(reps / 10) * 100}%` }}
+            />
+            <input
+              type="range"
+              min={0}
+              max={10}
+              value={reps}
+              onChange={(e) => setReps(Number(e.target.value))}
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col gap-2 w-60">
+          <label className="font-poppins">No. of Petals : {repsP}</label>
+          <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
+            <div
+              className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
+              style={{ width: `${(repsP / 10) * 100}%` }}
+            />
+            <input
+              type="range"
+              min={0}
+              max={10}
+              value={repsP}
+              onChange={(e) => setRepsP(Number(e.target.value))}
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex justify-center mt-10">
+        <button
+          onClick={handleGenerate}
+          className="font-primetime text-xl px-8 py-3 rounded-full! border-none! bg-linear-to-r from-pink-dark to-pink-light hover:scale-105 transition-transform shadow-lg shadow-pink-dark/50"
+        >
+          Generate
+        </button>
+      </div>
+    </div>
   );
 }
 

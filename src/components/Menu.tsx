@@ -91,7 +91,7 @@ export default function Menu() {
             <a
               key={item.href}
               href={item.href}
-              className="font-primetime text-pink-light! text-5xl uppercase hover:text-pink-medium transition-colors duration-300"
+              className="font-primetime text-pink-light! text-5xl uppercase hover:text-pink-dark! transition-colors! duration-200!"
               onClick={toggleMenu}
             >
               {item.label}
