@@ -7,8 +7,13 @@
     }
 }
 
-.spin {
+.disk {
     animation: spin 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.disk.spinning {
+    animation-play-state: running;
 }
 
 @keyframes pulse-height {

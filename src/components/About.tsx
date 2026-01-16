@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="my-20 w-2/3 mx-auto flex flex-col justify-center items-center"
+      className="my-20 w-11/12 md:w-2/3 mx-auto flex flex-col justify-center items-center"
     >
       <h2 className="uppercase text-5xl! gradient-heading my-20 tracking-widest">
         {"ABOUT".split("").map((char, index) => (
@@ -17,7 +17,7 @@ export default function About() {
         <img
           src={skins}
           alt="BlackPink concept skins for Valorant"
-          className="lg:max-w-2/5"
+          className="lg:max-w-2/5 hover:scale-105 transition-all duration-400"
         />
         <div className="flex flex-col gap-4 text-justify font-medium">
           <h3 className="font-family-primetime text-pink-light text-3xl!">

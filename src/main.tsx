@@ -4,7 +4,7 @@ import "./index.css";
 import Latest from "./components/latest";
 import MembersSection from "./components/membersSection";
 import Album from "./components/albumSection";
-import Banner from "./components/banner";
+import Banner from "./components/Banner";
 import Menu from "./components/Menu";
 import About from "./components/About";
 
@@ -15,6 +15,6 @@ createRoot(document.getElementById("root")!).render(
     <About />
     <Latest />
     <MembersSection />
-    <Album />
+    {/* <Album /> */}
   </StrictMode>
 );
