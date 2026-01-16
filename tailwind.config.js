@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
        fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
         primetime: ['Primetime', 'sans-serif'],
         valorant: ['Valorant', 'sans-serif'],
       },

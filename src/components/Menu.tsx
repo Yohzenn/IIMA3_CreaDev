@@ -3,8 +3,8 @@ import "./Menu.css";
 
 const menuItems = [
   { href: "#home", label: "Home" },
-  { href: "#members", label: "Members" },
   { href: "#about", label: "About" },
+  { href: "#members", label: "Members" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -31,15 +31,14 @@ export default function Menu() {
     <>
       {/* Burger Button SVG */}
       <div
-        className={`menu-container fixed top-8 right-8 z-50 cursor-pointer ${
+        className={`menu-container fixed top-1 md:top-8 right-1 md:right-8 z-50 cursor-pointer ${
           isOpen ? "active" : ""
         }`}
         onClick={toggleMenu}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="100"
+          className="size-25 md:size-30"
           viewBox="0 0 200 200"
         >
           <g strokeWidth="6.5" strokeLinecap="round">

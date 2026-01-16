@@ -6,13 +6,15 @@ import MembersSection from "./components/membersSection";
 import Album from "./components/albumSection";
 import Banner from "./components/banner";
 import Menu from "./components/Menu";
+import About from "./components/About";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Banner />
     <Menu />
-    <Latest></Latest>
+    <Banner />
+    <About />
+    <Latest />
     <MembersSection />
-    <Album/>
+    <Album />
   </StrictMode>
 );
