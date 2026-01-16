@@ -85,7 +85,7 @@ function CustomCover() {
             bgColor={appliedBgColor}
             curveColor={appliedCurveColor}
             petalColor={appliedPetalColor}
-            className="md:size-1/2"
+            className=""
           />
           <img
             src={getLogoImage()}
