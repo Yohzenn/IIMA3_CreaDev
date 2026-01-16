@@ -3,7 +3,7 @@ import draw, { petalCoords } from "../services/cover";
 import { useEffect,useRef,useState } from "react";
 import { petal } from "../services/cover";
 
-function Album({reps, setReps, repsP, setRepsP}:{reps:number ,setReps:(e: React.ChangeEvent<HTMLInputElement>) => void,repsP:number ,setRepsP:(e: React.ChangeEvent<HTMLInputElement>) => void}) {
+function Album({reps, repsP, className}:{reps:number ,repsP:number ,className:string}) {
     const size = 500;
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     //const [reps, setReps] = useState<number>(4);
@@ -29,6 +29,7 @@ function Album({reps, setReps, repsP, setRepsP}:{reps:number ,setReps:(e: React.
         let rotation:number;
         let offset = 0;
         let rafID: number;
+        ctx.lineWidth = 2;
         function animate() {
             ctx.clearRect(0, 0, size, size);
             ctx.fillRect(0,0,size,size);
@@ -73,7 +74,7 @@ function Album({reps, setReps, repsP, setRepsP}:{reps:number ,setReps:(e: React.
                 }
                 // Trait violet (fixe)
                 
-    offset += 2;
+    offset += 4;
 
     if (offset < 1200) {
       rafID = requestAnimationFrame(animate);
@@ -91,32 +92,9 @@ function Album({reps, setReps, repsP, setRepsP}:{reps:number ,setReps:(e: React.
 
         return (
             <>
-                <canvas ref={canvasRef} width={size} height={size} />
+                <canvas ref={canvasRef} width={size} height={size} className={className}/>
             </>
         );
 }
-/*
-                <div>
-                    <label>Nombre de courbes : {reps}</label>
 
-                    <input
-                        type="range"
-                        min={0}
-                        max={10}
-                        value={reps}
-                        onChange={(e) => setReps(Number(e.target.value))}
-                    />
-                </div>
-                <div>
-                    <label>Nombre de pétales : {repsP}</label>
-
-                    <input
-                        type="range"
-                        min={0}
-                        max={10}
-                        value={repsP}
-                        onChange={(e) => setRepsP(Number(e.target.value))}
-                    />
-                </div>
-*/
 export default Album
