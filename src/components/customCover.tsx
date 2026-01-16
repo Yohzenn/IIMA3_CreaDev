@@ -4,8 +4,11 @@ import Logo_White from "../assets/img/Logo_White.png";
 import Logo_Terciary from "../assets/img/Logo_Terciary.png";
 import Logo_TerciaryDark from "../assets/img/Logo_TerciaryDark.png";
 import Logo_Pink from "../assets/img/Logo_Pink.png";
+import Haven from "../assets/img/Haven.png";
+import Icebox from "../assets/img/Icebox.png";
+import Ascent from "../assets/img/Ascent.png";
+import Pearl from "../assets/img/Pearl.png";
 
-const bgColors = ["#000000", "#170c10", "#f79aaf", "#6a3f4a"];
 const curveColors = ["#f79aaf", "#ffd700", "#ffffff", "#8e4256"];
 const petalColors = ["#f79aaf", "#ffd700", "#ffffff", "#8e4256"];
 const logoColors = [
@@ -14,17 +17,18 @@ const logoColors = [
   { color: "#6a3f4a", label: "TerciaryDark", image: Logo_TerciaryDark },
   { color: "#ffffff", label: "White", image: Logo_White },
 ];
+const bgImages = [Haven, Icebox, Ascent, Pearl];
 
 function CustomCover() {
   const [reps, setReps] = useState<number>(3);
   const [repsP, setRepsP] = useState<number>(20);
-  const [bgColor, setBgColor] = useState<string>(bgColors[0]);
+  const [bgImage, setBgImage] = useState<string>(bgImages[0]);
   const [curveColor, setCurveColor] = useState<string>(curveColors[0]);
   const [petalColor, setPetalColor] = useState<string>(petalColors[0]);
   const [logoColor, setLogoColor] = useState<string>(logoColors[0].color);
   const [appliedReps, setAppliedReps] = useState<number>(3);
   const [appliedRepsP, setAppliedRepsP] = useState<number>(4);
-  const [appliedBgColor, setAppliedBgColor] = useState<string>(bgColors[0]);
+  const [appliedBgImage, setAppliedBgImage] = useState<string>(bgImages[0]);
   const [appliedCurveColor, setAppliedCurveColor] = useState<string>(
     curveColors[0]
   );
@@ -38,7 +42,7 @@ function CustomCover() {
   const handleGenerate = () => {
     setAppliedReps(reps);
     setAppliedRepsP(repsP);
-    setAppliedBgColor(bgColor);
+    setAppliedBgImage(bgImage);
     setAppliedCurveColor(curveColor);
     setAppliedPetalColor(petalColor);
     setAppliedLogoColor(logoColor);
@@ -52,7 +56,7 @@ function CustomCover() {
   };
 
   return (
-    <div id="cover" className="lg:my-20 w-11/12 md:w-2/3 mx-auto">
+    <div id="cover" className="mb-20 lg:my-20 w-11/12 md:w-2/3 mx-auto">
       <h2 className="uppercase text-5xl! gradient-heading my-20 tracking-widest flex flex-col flex-wrap lg:flex-row items-center gap-2 lg:gap-4">
         <span>
           {"CUSTOMIZE".split("").map((char, index) => (
@@ -82,7 +86,7 @@ function CustomCover() {
           <Album
             reps={appliedReps}
             repsP={appliedRepsP}
-            bgColor={appliedBgColor}
+            bgImage={appliedBgImage}
             curveColor={appliedCurveColor}
             petalColor={appliedPetalColor}
             className=""
@@ -150,19 +154,24 @@ function CustomCover() {
           </div>
 
           <div className="flex flex-col">
-            <h3 className="mb-5">Background :</h3>
+            <h3 className="mb-5">Background Image :</h3>
             <div className="flex gap-8 justify-center mb-5">
-              {bgColors.map((color) => (
+              {bgImages.map((image) => (
                 <button
-                  key={color}
-                  onClick={() => setBgColor(color)}
-                  className={`w-14 h-14 rounded-md cursor-pointer border-2 transition-all ${
-                    bgColor === color
+                  key={image}
+                  onClick={() => setBgImage(image)}
+                  className={`w-14 h-14 rounded-md cursor-pointer border-2 transition-all overflow-hidden ${
+                    bgImage === image
                       ? "border-pink-light scale-110"
                       : "border-transparent"
                   }`}
-                  style={{ backgroundColor: color }}
-                />
+                >
+                  <img
+                    src={image}
+                    alt="Background option"
+                    className="w-full h-full object-cover"
+                  />
+                </button>
               ))}
             </div>
           </div>

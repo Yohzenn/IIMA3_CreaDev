@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import bannerBg from "../assets/img/banner_bg.png";
 import vctLogo from "../assets/img/logo_vct.svg";
 import jennie from "../assets/img/jennie.png";
@@ -7,6 +7,23 @@ import bannerVideo from "../assets/video/jump_mv.mp4";
 
 export default function Banner() {
   const [isHovered, setIsHovered] = useState(false);
+  const [scrollScale, setScrollScale] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Scale de 1 à 1.5 sur les premiers 100vh de scroll
+      const scale = 1 + (scrollPosition / windowHeight) * 0.5;
+
+      // Limiter le scale maximum à 1.5
+      setScrollScale(Math.min(scale, 1.5));
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div
@@ -41,7 +58,8 @@ export default function Banner() {
 
       <div className="relative z-10 overflow-hidden lg:overflow-visible h-full max-w-full lg:max-w-2/3 m-auto flex items-center justify-center">
         <div
-          className="absolute origin-bottom -bottom-50 md:-bottom-30 z-30 w-170 min-w-170 max-w-170"
+          className="absolute origin-bottom -bottom-50 md:-bottom-30 z-30 w-170 min-w-170 max-w-170 transition-transform duration-100 ease-out"
+          style={{ transform: `scale(${scrollScale})` }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
