@@ -62,7 +62,7 @@ export function petalCoords(reps:number){
         let x:number = Math.random()*500;
         let y:number = Math.random()*500;
         let rotation:number = Math.random()*Math.PI*2;
-        let size:number = Math.random()*50;
+        let size:number = Math.random()*(50-20)+20;
         result.push([x,y,rotation,size]);
     }
     return result
