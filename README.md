@@ -2,7 +2,7 @@
 
 BLACKPINK s'infiltre dans l'univers de VALORANT à l'occasion du VCT 2026, effaçant la frontière entre musique et gaming.
 
-Débloquez des skins d'armes BLACKPINK en édition limitée : quatre designs iconiques, chacun inspiré de l'une des membres du groupe.
+Débloquez des skins d'armes BLACKPINK en édition limitée : quatre designs iconiques, aux couleurs du groupe.
 
 Portée par leur tout nouveau single VICTORY, la collaboration atteint un nouveau sommet d'intensité.
 
