@@ -7,7 +7,7 @@ const petalColors = ["#ee82ee", "#f79aaf", "#ffffff", "#ff69b4"];
 
 function CustomCover() {
   const [reps, setReps] = useState<number>(3);
-  const [repsP, setRepsP] = useState<number>(4);
+  const [repsP, setRepsP] = useState<number>(20);
   const [bgColor, setBgColor] = useState<string>(bgColors[0]);
   const [curveColor, setCurveColor] = useState<string>(curveColors[0]);
   const [petalColor, setPetalColor] = useState<string>(petalColors[0]);
@@ -149,12 +149,12 @@ function CustomCover() {
           <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
             <div
               className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
-              style={{ width: `${(repsP / 10) * 100}%` }}
+              style={{ width: `${(repsP / 50) * 100}%` }}
             />
             <input
               type="range"
               min={0}
-              max={10}
+              max={50}
               value={repsP}
               onChange={(e) => setRepsP(Number(e.target.value))}
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"

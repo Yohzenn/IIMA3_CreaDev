@@ -89,7 +89,7 @@ function Album({
       }
       // Trait violet (fixe)
 
-      offset += 4;
+      offset += 6;
 
       if (offset < 1200) {
         rafID = requestAnimationFrame(animate);
