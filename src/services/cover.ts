@@ -67,12 +67,11 @@ export function petalCoords(reps:number){
     }
     return result
 }
-export function petal(x:number,y:number,rotation:number,size:number,ctx: CanvasRenderingContext2D){
-    ctx.fillStyle = "violet";
+export function petal(x:number,y:number,rotation:number,size:number,ctx: CanvasRenderingContext2D, color: string = "violet"){
+    ctx.fillStyle = color;
     ctx.beginPath();
     ctx.ellipse(x,y,size,size*0.3,rotation,0,Math.PI*2);
     ctx.fill();
-    ctx.fillStyle = "black";
 }
 
 export default draw
