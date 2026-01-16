@@ -32,7 +32,7 @@ export default function Menu() {
     <>
       {/* Burger Button SVG */}
       <div
-        className={`menu-container fixed top-1 md:top-8 right-1 md:right-8 z-50 cursor-pointer ${
+        className={`menu-container rounded-full bg-black/10 fixed top-1 md:top-8 right-1 md:right-8 z-50 cursor-pointer ${
           isOpen ? "active" : ""
         }`}
         onClick={toggleMenu}

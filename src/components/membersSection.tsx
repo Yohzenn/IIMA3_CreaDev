@@ -5,7 +5,7 @@ export default function MembersSection() {
   return (
     <div id="members" className="lg:my-20">
       <h2 className="uppercase text-5xl! gradient-heading my-20 tracking-widest">
-        {"MEMBERS".split("").map((char, index) => (
+        {"AGENTS".split("").map((char, index) => (
           <span key={index} className="char">
             {char}
           </span>

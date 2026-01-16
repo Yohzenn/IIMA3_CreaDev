@@ -55,27 +55,29 @@ function CustomCover() {
         </span>
       </h2>
 
-      <div className="flex justify-center items-center flex-col md:flex-row gap-20">
+      <div className="flex justify-center items-center flex-col lg:flex-row gap-20">
         <Album
           reps={appliedReps}
           repsP={appliedRepsP}
           bgColor={appliedBgColor}
           curveColor={appliedCurveColor}
           petalColor={appliedPetalColor}
-          className="w-[360px] h-[360px]"
+          className="md:size-1/2"
         />
 
-        <div className="w-[360px] font-primetime text-center">
-          <div>
-            <h3 className="mb-5">Logo color:</h3>
+        <div className="w-1/2 text-center">
+          <div className="flex flex-col">
+            <h3 className="mb-5">Logo color :</h3>
             <div className="flex gap-8 justify-center mb-5">
               <div className="bg-white w-14 h-14 "></div>
               <div className="bg-white w-14 h-14 "></div>
               <div className="bg-white w-14 h-14 "></div>
               <div className="bg-white w-14 h-14 "></div>
             </div>
+          </div>
 
-            <h3 className="mb-5">Curve Color:</h3>
+          <div className="flex flex-col">
+            <h3 className="mb-5">Curve Color :</h3>
             <div className="flex gap-8 justify-center mb-5">
               {curveColors.map((color) => (
                 <button
@@ -90,8 +92,10 @@ function CustomCover() {
                 />
               ))}
             </div>
+          </div>
 
-            <h3 className="mb-5">Petal Color:</h3>
+          <div className="flex flex-col">
+            <h3 className="mb-5">Petal Color :</h3>
             <div className="flex gap-8 justify-center mb-5">
               {petalColors.map((color) => (
                 <button
@@ -106,8 +110,10 @@ function CustomCover() {
                 />
               ))}
             </div>
+          </div>
 
-            <h3 className="mb-5">Background:</h3>
+          <div className="flex flex-col">
+            <h3 className="mb-5">Background :</h3>
             <div className="flex gap-8 justify-center mb-5">
               {bgColors.map((color) => (
                 <button
@@ -123,42 +129,43 @@ function CustomCover() {
               ))}
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="flex justify-center gap-10 mt-10 flex-col md:flex-row">
-        <div className="flex flex-col gap-2 w-60">
-          <label className="font-poppins">No. of curves : {reps}</label>
-          <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
-            <div
-              className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
-              style={{ width: `${(reps / 10) * 100}%` }}
-            />
-            <input
-              type="range"
-              min={0}
-              max={10}
-              value={reps}
-              onChange={(e) => setReps(Number(e.target.value))}
-              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col gap-2 w-60">
-          <label className="font-poppins">No. of Petals : {repsP}</label>
-          <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
-            <div
-              className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
-              style={{ width: `${(repsP / 10) * 100}%` }}
-            />
-            <input
-              type="range"
-              min={0}
-              max={10}
-              value={repsP}
-              onChange={(e) => setRepsP(Number(e.target.value))}
-              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-            />
+          <div className="flex flex-col items-center justify-center gap-8">
+            <div className="flex flex-col gap-2 w-60">
+              <label>No. of curves : {reps}</label>
+              <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
+                <div
+                  className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
+                  style={{ width: `${(reps / 10) * 100}%` }}
+                />
+                <input
+                  type="range"
+                  min={0}
+                  max={10}
+                  value={reps}
+                  onChange={(e) => setReps(Number(e.target.value))}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2 w-60">
+              <label className="font-poppins">No. of Petals : {repsP}</label>
+              <div className="relative h-2 bg-white/20 rounded-full overflow-hidden">
+                <div
+                  className="absolute h-full bg-linear-to-r from-pink-dark to-pink-light rounded-full transition-all duration-100"
+                  style={{ width: `${(repsP / 10) * 100}%` }}
+                />
+                <input
+                  type="range"
+                  min={0}
+                  max={10}
+                  value={repsP}
+                  onChange={(e) => setRepsP(Number(e.target.value))}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
